@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+  - name: move all files to trash directory
+    copy: 
+      remote_src=true
+      src=/etc/yum.repos.d/* dest=/etc/yum.repos.d/trsh/
+  - name: caching yum
+    yum:
+      update_cache=yes
