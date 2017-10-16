@@ -2,8 +2,6 @@
   hosts: all
   gather_facts: True
   tasks:
-  - name: testing network
-    ping: walkr
   - name: testing nodes for docker service
     service:
       - name: docker
