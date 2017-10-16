@@ -1,12 +1,8 @@
 - name: WALKR INIT TEST
   hosts: all
-  gather_facts: True
+  gather_facts: true
   tasks:
   - name: testing nodes for docker service
-    service:
-      - name: docker
-        state: started
+    shell: systemctl start docker 
   - name: Test for docker registry on XTER
-    docker_container:
-      - name: xreg.1
-        state: started
+    shell: docker container start xreg.1
