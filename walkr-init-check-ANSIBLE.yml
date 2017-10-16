@@ -1,0 +1,14 @@
+- name: WALKR INIT TEST
+  hosts: all
+  gather_facts: True
+  tasks:
+  - name: testing network
+    ping:
+  - name: testing nodes for docker service
+    service:
+      - name: docker
+        state: started
+  - name: Test for docker registry on XTER
+    docker_container:
+      - name: xreg.1
+        state: started
