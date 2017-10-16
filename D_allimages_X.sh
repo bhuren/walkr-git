@@ -5,6 +5,6 @@ do
 	ech0 $i
 done
 
-echo "eleted All Images Stored locally on this node"
+echo "deleted All Images Stored locally on this node"
 
 exit
