@@ -12,3 +12,4 @@
      docker_container:
        name: xreg.1.8d12wqefy7zsm1eewh8pfpvv0
        state: present
+       image: registry:lot
