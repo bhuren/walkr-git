@@ -1,0 +1,9 @@
+- name: docker inpsect on all nodes
+  hosts: x
+  gather_facts: True
+  tasks:
+   - name: checking for the registry container
+     docker_container:
+       name: xreg.1.8d12wqefy7zsm1eewh8pfpvv0
+       state: present
+       image: registry
