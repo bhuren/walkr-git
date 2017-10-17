@@ -10,5 +10,5 @@
        state: started
    - name: checking for the registry container
      docker_container:
-       name: xreg.1.k
+       name: xreg.1.8
        state: started
