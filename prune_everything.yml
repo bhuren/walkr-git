@@ -1,10 +1,6 @@
 - name: prune everything
-  hosts: all
+  hosts: walkr
   gather_facts: false
   tasks:
   - name: pruning containers
-    command: docker container prune
-  - name: pruning images
-    command: docker image prune
-  - name: pruning volumes
-    command: docker volume prune
+    service: name=docker state=restarted

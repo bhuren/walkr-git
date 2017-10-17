@@ -2,7 +2,13 @@
   hosts: all
   gather_facts: True
   tasks:
-  - name: restarting docker on all nodes
-    service:
-      - name: docker
-        state: restarted
+   - name: testing connectivity to all nodes
+     ping: 
+   - name: Checking docker service on all nodes
+     service:
+       name: docker
+       state: started
+   - name: checking for the registry container
+     docker_container:
+       name: xreg.1.k
+       state: started
