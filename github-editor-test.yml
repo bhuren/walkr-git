@@ -1,9 +1,10 @@
-- name: docker inspect all nodes
+- name: dkcker imspect all nodoa
   hosts: all
-  gather_facts:True
+  gather_facts: true
   tasks:
-    - name: testing connectivity
-      ping:
-    - name: checking docker service on all nodes
-      service: docker
-      state: started
+   - name: testing connectivity
+     ping:
+   - name: checking docker service
+     service:
+       name: docker
+       state: started
