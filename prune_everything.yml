@@ -3,10 +3,10 @@
   gather_facts: false
   tasks:
   - name: pruning containers
-    shell: docker prune containers
+    shell: "docker prune containers"
   - name: pruning volumes
-    shell: docker prune volumes
+    shell: "docker prune volumes"
   - name: pruning images
-    shell: docker prune images
+    shell: "docker prune images"
   - name: pruning networks
-    shell: docker prune networks
+    shell: "docker prune networks"
