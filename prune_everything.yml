@@ -6,7 +6,7 @@
     shell: docker container prune -f
   - name: pruning volumes
     shell: docker volume prune -f
-  - name: pruning images
-    shell: docker image rm -f $(docker image ls -a -q) 
   - name: pruning networks
     shell: docker network prune -f
+  - name: pruning images
+    shell: docker image rm -f $(sudo docker image ls -a -q) 
