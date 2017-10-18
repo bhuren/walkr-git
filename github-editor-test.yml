@@ -1,6 +1,6 @@
 - name: dkcker imspect all nodoa
   hosts: all
-  gather_facts: true
+  gather_facts: false
   tasks:
    - name: testing connectivity
      ping:
