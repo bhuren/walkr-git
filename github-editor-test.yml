@@ -1,0 +1,9 @@
+- name: docker inspect all nodes
+  hosts: all
+  gather_facts:True
+  tasks:
+    - name: testing connectivity
+      ping:
+    - name: checking docker service on all nodes
+      service: docker
+      state: started
