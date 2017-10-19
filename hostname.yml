@@ -1,0 +1,7 @@
+- name: show return value of command module
+  hosts: walkr 
+  tasks:
+    - name: capture output of id command
+      command: hostname
+      register: login
+    - debug: var=login
