@@ -5,4 +5,5 @@
       raw: "docker container ls |grep xreg" 
       register: output
    
-    - debug: var=output.stdout
+    - debug: msg="Directory is empty"
+        when: contents.stdout == ""
