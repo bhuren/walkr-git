@@ -1,5 +1,5 @@
 - name: Checking for Registry
-  hosts: node3
+  hosts: x
   tasks:
     - name: CHECKING FOR LOCAL DOCKER REGISTRY
       raw: "docker container ls |grep xreg" 
