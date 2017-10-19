@@ -4,5 +4,5 @@
     - name: capture output of * command
       raw: "docker container ls |grep xreg" 
       register: output
-    - debug: var=output
+    - debug: var=output.stdout
 
