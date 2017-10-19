@@ -1,10 +1,11 @@
 - name: Checking for Registry
   hosts: x
+  gather_facts: false
   tasks:
     - name: CHECKING FOR LOCAL DOCKER REGISTRY
       raw: "docker container ls |grep xreg" 
       register: output
-      ignore_errors: True
+      ignore_errors: yes
    
     - debug: msg="Container Xreg DETECTED"
       when: output.stdout.find('xreg') != -1
