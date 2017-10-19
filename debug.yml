@@ -5,6 +5,6 @@
       raw: "docker container ls |grep xreg" 
       register: output
     - debug: msg="Container Xreg detected"
-      when: output.stdout.find('xreg')=1
+      when: output.stdout.find('xreg') != -1
     - debug: msg="***ERROR NO REGISTRY CONTAINER DETECTED"
-      when: output.stdout.find('xreg')!=1  
+      when: output.stdout.find('xreg') != 1 
