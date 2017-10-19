@@ -1,6 +1,13 @@
-- name: Registry check
-  hosts: x
-  gather_facts: false
+- name: Checking for Registry
+  hosts: node3
   tasks:
-   - name: checking for the registry container
-     docker_service: services=xreg state=present
+    - name: capture output of * command
+      raw: "docker container ls |grep xreg" 
+      register: output
+      ignore_errors: True
+   
+    - debug: msg="Container Xreg DETECTED"
+      when: output.stdout.find('xreg') != -1
+
+    - debug: msg="FATAL   ***NO REGISTRY CONTAINER DETECTED*** "
+      when: output.stdout == ""

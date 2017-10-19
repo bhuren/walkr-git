@@ -1,9 +1,11 @@
 - name: checking network connectivity and for docker service
-  hosts: walkr
+  hosts: all
   gather_facts: true
   tasks:
   - name: Pinging all nodes
     ping:
   - name: Check for docker service
     service: name=docker state=started
+  - include: Xreg_check.yml
+
   

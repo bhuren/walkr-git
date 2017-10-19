@@ -1,13 +1,7 @@
-- name: debug module for *
-  hosts: node3
+- name: BASE DEBUG MODULE
+  hosts: x 
   tasks:
     - name: capture output of * command
-      raw: "docker container ls |grep xreg" 
-      register: output
-      ignore_errors: True
-   
-    - debug: msg="Container Xreg DETECTED"
-      when: output.stdout.find('xreg') != -1
-
-    - debug: msg="Container NO Xreg DETECTED"
-      when: output.stdout == ""
+      raw: hostname
+      register: tx
+    - debug: var=tx
