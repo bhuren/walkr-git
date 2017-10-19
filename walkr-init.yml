@@ -6,6 +6,6 @@
     ping:
   - name: Check for docker service
     service: name=docker state=started
-  
+- include: Xreg_check.yml
 
   
