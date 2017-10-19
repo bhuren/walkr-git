@@ -2,7 +2,7 @@
   hosts: x
   tasks:
     - name: capture output of * command
-      command: docker container ls
+      command: docker container ls |grep xreg
       register: output
     - debug: var=output
 
