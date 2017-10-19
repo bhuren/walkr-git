@@ -1,0 +1,8 @@
+- name: debug module for *
+  hosts: x
+  tasks:
+    - name: capture output of * command
+      command: docker container ls
+      register: output
+    - debug: var=output
+
