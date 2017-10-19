@@ -3,4 +3,4 @@
   gather_facts: false
   tasks:
    - name: checking for the registry container
-     docker_container: name=xreg state=present
+     docker_container: name=xreg state=present image=registry:latest
