@@ -5,5 +5,4 @@
       raw: "docker container ls |grep xreg" 
       register: output
    
-    - debug: msg="***ERROR NO REGISTRY CONTAINER DETECTED"
-      when: output.stdout.find('xreg') != 1 
+    - debug: var=output.stdout
