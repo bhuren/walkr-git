@@ -1,7 +1,9 @@
-- name: prune everything
+- name: checking network connectivity and for docker service
   hosts: walkr
   gather_facts: true
   tasks:
+  - name: Pinging all nodes
+    ping:
   - name: Check for docker service
     service: name=docker state=started
   
