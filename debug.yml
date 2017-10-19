@@ -4,6 +4,7 @@
     - name: capture output of * command
       raw: "docker container ls |grep xreg" 
       register: output
+      ignore_errors: True
    
     - debug: msg="Container Xreg DETECTED"
       when: output.stdout.find('xreg') != -1
