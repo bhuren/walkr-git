@@ -3,4 +3,4 @@
   gather_facts: false
   tasks:
    - name: checking for the registry container
-     docker_service: name=xreg state=present 
+     docker_service: name=xreg state=running
