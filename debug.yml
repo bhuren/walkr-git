@@ -5,5 +5,7 @@
       raw: "docker container ls |grep xreg" 
       register: output
    
-    - debug: msg="Directory is empty"
-      when: output.stdout.find('dreg') != -1
+    - debug: msg="Container Xreg DETECTED"
+      when: output.stdout.find('xreg') != -1
+
+    - debug: var=output.stderr  
