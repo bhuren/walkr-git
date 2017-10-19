@@ -1,7 +1,7 @@
 - name: Checking for Registry
   hosts: node3
   tasks:
-    - name: capture output of * command
+    - name: CHECKING FOR LOCAL DOCKER REGISTRY
       raw: "docker container ls |grep xreg" 
       register: output
       ignore_errors: True
