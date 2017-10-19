@@ -1,0 +1,11 @@
+# Ansible module file:link creates link between two files
+- name: show return value of command module
+  hosts: walkr
+  tasks:
+    - name: create a link between xter and nodes
+      file:
+        src: /tp/taste.txt
+        path: /tp/tist
+        owner: man
+        group: admins
+        state: link
