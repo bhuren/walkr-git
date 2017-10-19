@@ -6,4 +6,4 @@
       register: output
    
     - debug: msg="Directory is empty"
-        when: contents.stdout == ""
+      when: contents.stdout == ""
