@@ -8,4 +8,5 @@
     - debug: msg="Container Xreg DETECTED"
       when: output.stdout.find('xreg') != -1
 
-    - debug: var=output.stderr  
+    - debug: msg="Container NO Xreg DETECTED"
+      when: output.stdout.find('xreg') = -1
