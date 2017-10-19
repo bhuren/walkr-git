@@ -8,7 +8,7 @@
       ignore_errors: yes
    
     - debug: msg="Container Xreg DETECTED"
-      only_if: output.stdout.find('xreg') != -1
+      when: output.stdout.find('xreg') != -1
 
     - debug: msg="FATAL   ***NO REGISTRY CONTAINER DETECTED*** "
       when: output.stdout == ""
