@@ -1,4 +1,4 @@
-- name: checking network connectivity and for docker service
+- name: Shutting down walkr
   hosts: all
   gather_facts: true
   tasks:
