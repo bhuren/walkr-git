@@ -1,0 +1,15 @@
+- name: checking network connectivity and for docker service
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: Stop the docker service 
+    service: name=docker state=stopped
+    notify: shutdown_walkr
+    notify: shutdown_xter
+  handlers:
+  - name: shutdown_walkr
+    hosts: walkr
+    raw: shutdown -h now
+  - name: shutdown_xter
+    hosts: x
+    raw: shutdown_h now 
