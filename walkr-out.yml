@@ -5,9 +5,10 @@
   - name: Stop the docker service 
     service: name=docker state=stopped
     notify: shutdown_walkr
+    notify: shutdown_xter
  
   handlers:
-  - name: shutdown_walkr nodes
+  - name: shutdown_walkr 
     raw: shutdown -h now
     when: ansible_hostname != "xter"
   - name: shutdown_xter
