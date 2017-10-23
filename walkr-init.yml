@@ -9,7 +9,7 @@
     notify: restart_docker
   - name: Check for docker service
     service: name=docker state=started
-- handlers:
+  handlers:
     restart_docker:
     service: name=docker state=restarted
 - include: Xreg_check.yml
