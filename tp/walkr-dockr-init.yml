@@ -1,0 +1,7 @@
+- name: walkr docker initiation
+  hosts: all
+  tasks:
+    - name: capture output of * command
+      raw: hostname
+      register: tx
+    - debug: var=tx
