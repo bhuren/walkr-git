@@ -5,7 +5,7 @@
   - name: Pinging all nodes
     ping:
   - name: Checking for latest docker package
-    yum: name=docker-ce state=installed
+    yum: name=docker-ce state=latest
     notify: restart docker
   - name: Check for docker service
     service: name=docker state=started
