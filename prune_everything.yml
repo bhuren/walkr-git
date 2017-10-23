@@ -10,3 +10,4 @@
     shell: docker network prune -f
   - name: pruning images
     shell: docker image rm -f $(sudo docker image ls -a -q) 
+    ignore_errors: yes
