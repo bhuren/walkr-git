@@ -1,0 +1,7 @@
+- name: walkr xter docker/reg init
+  hosts: x 
+  tasks:
+    - name: capture output of * command
+      raw: hostname
+      register: tx
+    - debug: var=tx
