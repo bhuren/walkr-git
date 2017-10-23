@@ -6,12 +6,12 @@
     ping:
   - name: Checking for latest docker package
     yum: name=docker-ce state=latest
-    notify: restart_docker
+    notify: restart docker
   - name: Check for docker service
     service: name=docker state=started
   handlers:
-    restart_docker:
-    service: name=docker state=restarted
+    - name: restart_docker
+      service: name=docker state=restarted
 - include: Xreg_check.yml
 
 
