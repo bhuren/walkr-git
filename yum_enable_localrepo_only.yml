@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- hosts: walkr
   tasks:
-  - name: move all files to trash directory
+  - name: Cleaning repo base completely and activating local repo only
+    file:
+      remote_src=true
+      src=/etc/yum.repos.d/*.repo state=absent
     copy: 
       remote_src=true
-      src=/etc/yum.repos.d/* dest=/etc/yum.repos.d/trsh/
+      src=/etc/yum.repos.d/trsh/walkr-xter.repo dest=/etc/yum.repos.d/walkr-xter.repo
   - name: caching yum
     yum:
       update_cache=yes
