@@ -15,6 +15,6 @@
   vars:
     tok: "{{ hostvars['xter']['token']['stdout'] }}"
   tasks:
-  - debug: var=tok
+  - raw: var=tok
     
 
