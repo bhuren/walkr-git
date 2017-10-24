@@ -13,6 +13,6 @@
 - name: Swarm - Inititating the worker nodes
   hosts: walkr
   tasks:
-  - - debug: var=hostvars['x']['token.stdout']
-      when: hostvars['x']['token'] is defined
+  - debug: var=hostvars['x']['token.stdout']
+    
 
