@@ -12,7 +12,9 @@
   
 - name: Swarm - Inititating the worker nodes.
   hosts: walkr
+  vars:
+    tok: {{ hostvars['xter']['token']['stdout'] }}
   tasks:
-  - raw: "{{ hostvars['xter']['token']['stdout'] }}"
+  - debug: var=tok
     
 
