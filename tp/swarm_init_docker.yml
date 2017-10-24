@@ -16,7 +16,7 @@
   hosts: walkr
   gather_facts: no
   vars:
-    tok: "{{ hostvars['xter']['token']['stdout'] }}"
+    tok: "{{ hostvars.xter.token.stdout }}"
   tasks:
   - debug: var=tok
   - raw: "{{ tok }}"
