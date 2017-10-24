@@ -1,0 +1,16 @@
+- name: Cleaning previous swarm settings
+  hosts: all
+  tasks:
+  - raw: docker swarm leave -f
+    ignore_errors: yes
+
+- name: Swarm - Initiating the manager node on xter
+  hosts: x
+  tasks:
+  - raw: docker swarm init | grep 2377
+    register: token 
+    notify: swarm_initiate_nodes
+  handlers:
+  - name: swarm_initiate_nodes
+    debug: var=token
+
