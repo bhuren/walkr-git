@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+  - name: Cleaning repo base completely and Re-activating all repos
+    script: /walkr-git/bash-scripts/yum_all_repos.sh
