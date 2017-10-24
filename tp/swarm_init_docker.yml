@@ -7,7 +7,7 @@
 - name: Swarm - Initiating the manager node on xter
   hosts: x
   tasks:
-  - raw: docker swarm init --advertise-addr 192.168.20.2 | grep 2377
+  - raw: docker swarm init | grep 2377
     register: token 
   
 - name: Swarm - Inititating the worker nodes.
