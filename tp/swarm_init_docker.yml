@@ -13,5 +13,5 @@
 - name: Swarm - Inititating the worker nodes
   hosts: walkr
   tasks:
-  - debug: token.stdout
+  - debug: var=token.stdout
 
