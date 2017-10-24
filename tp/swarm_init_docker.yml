@@ -9,9 +9,9 @@
   gather_facts: no
   tasks:
   - raw: docker swarm init --advertise-addr 192.168.20.2 | grep 2377
-    
     register: token 
-  
+  - debug: var=token.stdout
+
 - name: Swarm - Inititating the worker nodes.
   hosts: walkr
   gather_facts: no
