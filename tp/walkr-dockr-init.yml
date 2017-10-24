@@ -1,4 +1,4 @@
-- name: walkr docker initiation
+- name: walkr docker initiation!
   hosts: all
   tasks:
     - name: capture output of * command
