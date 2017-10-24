@@ -1,10 +1,11 @@
 ---
 - hosts: walkr
   tasks:
-  - name: Cleaning repo base completely and activating local repo only
+  - name: Cleaning repo base completely 
     file:
       remote_src=true
       src=/etc/yum.repos.d/*.repo state=absent
+  - name: Activating local repo only
     copy: 
       remote_src=true
       src=/etc/yum.repos.d/trsh/walkr-xter.repo dest=/etc/yum.repos.d/walkr-xter.repo
