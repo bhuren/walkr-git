@@ -13,5 +13,5 @@
 - name: Swarm - Inititating the worker nodes
   hosts: walkr
   tasks:
-  - raw: {{ token.stdout }}
+  - raw: "{{ token.stdout }}"
 
