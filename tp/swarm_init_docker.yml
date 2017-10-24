@@ -10,7 +10,9 @@
   - raw: docker swarm init | grep 2377
     register: token 
     notify: swarm_initiate_nodes
-  handlers:
-  - name: swarm_initiate_nodes
-    debug: var=token
+  
+- name: Swarm - Inititating the worker nodes
+  hosts: walkr
+  tasks:
+  - raw: '{{ token.stdout }}'
 
