@@ -6,15 +6,17 @@
 
 - name: Swarm - Initiating the manager node on xter
   hosts: x
+  gather_facts: no
   tasks:
   - raw: docker swarm init --advertise-addr 192.168.20.2 | grep 2377
     register: token 
   
 - name: Swarm - Inititating the worker nodes.
   hosts: walkr
+  gather_facts: no
   vars:
     tok: "{{ hostvars['xter']['token']['stdout'] }}"
   tasks:
-  - raw: var=tok
+  - debug: var=tok
     
 
