@@ -7,7 +7,7 @@
   
 - name: Shutting workers down
   hosts: walkr
-  gather_facts:false
+  gather_facts: false
   tasks:
   - raw: shutdown -h now
     notify: shutdown_xter  
