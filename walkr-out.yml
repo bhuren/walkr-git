@@ -4,13 +4,14 @@
   tasks:
   - name: Stop the docker service 
     service: name=docker state=stopped
+    notify: shutdown_xter
   
 - name: Shutting workers down
   hosts: walkr
   gather_facts: false
   tasks:
   - raw: shutdown -h now
-    notify: shutdown_xter  
+      
 
   handlers:
   - name: shutdown_xter 
