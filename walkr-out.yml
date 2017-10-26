@@ -15,6 +15,5 @@
 
   handlers:
   - name: shutdown_xter 
-    hosts: x
     raw: shutdown -h now
  
