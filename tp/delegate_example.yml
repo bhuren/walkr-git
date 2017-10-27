@@ -1,0 +1,11 @@
+- name: Example for a nsible delegate
+  hosts: walkr
+  gather_facts: false
+  tasks:
+  - raw: mkdir /tp
+    notify: web_terminate
+
+  handlers: 
+  - name: sef_terminate
+    raw: shutdown -h now
+    delegate_to: web
