@@ -13,7 +13,7 @@
     notify: self_terminate
 
   handlers: 
-  - name: sef_terminate
+  - name: self_terminate
     raw: shutdown -h now
     delegate_to: x
 
