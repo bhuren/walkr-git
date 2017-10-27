@@ -6,6 +6,6 @@
     notify: web_terminate
 
   handlers: 
-  - name: sef_terminate
+  - name: web_terminate
     raw: shutdown -h now
     delegate_to: web
