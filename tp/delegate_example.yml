@@ -2,7 +2,7 @@
   hosts: walkr
   gather_facts: false
   tasks:
-  - raw: mkdir /tp
+  - raw: touch /tp/dhoom.txt
     notify: web_terminate
 
   handlers: 
