@@ -6,7 +6,7 @@
     service: name=docker state=stopped
   
 - name: Shutting workers down
-  hosts: walkr
+  hosts: walkr*
   gather_facts: false
   tasks:
   - raw: shutdown -h now
