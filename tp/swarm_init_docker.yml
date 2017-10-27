@@ -19,7 +19,7 @@
     tok: "{{ hostvars.xter.token.stdout }}"
   tasks:
   - debug: var=tok
-  - shell: "{{ (tok | replace('\n', '')) }}"
+  - shell: "{{ (tok | replace('\r\n', '')) }}"
 
     
 
