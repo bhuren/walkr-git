@@ -19,7 +19,7 @@
     tok: "{{ hostvars.xter.token.stdout.split('\n') }}"
   tasks:
   - debug: 
-    msg: var=tok
+      msg: var=tok
  
     
 
