@@ -16,10 +16,10 @@
   hosts: walkr
   gather_facts: no
   vars:
-    tok: "{{ hostvars.xter.token.stdout }}"
+    tok: "{{ hostvars.xter.token.stdout.split('\n') }}"
   tasks:
   - debug: var=tok
-  - shell: "{{ (tok | replace('2377\r\n', '2377')) }}"
-
+  - msg: "{{ tok }}" 
+ 
     
 
