@@ -1,17 +1,17 @@
-- name: Preparing to stop docker
+- name: Stopping Docker service on all
   hosts: all
   gather_facts: true
   tasks:
   - name: Stop the docker service 
     service: name=docker state=stopped
   
-- name: Shutting workers down
+- name: Shutting down workers
   hosts: walkr
   gather_facts: false
   tasks:
   - raw: shutdown -h now
 
-- name: Shutting down controller
+- name: Shutting down Manager
   hosts: x
   gather_facts: false
   tasks:
